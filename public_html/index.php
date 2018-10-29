@@ -1,11 +1,10 @@
 <?php
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
-//use Slim\Container;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$settings = require __DIR__ . '/../src/settings.php';
+$settings = require __DIR__ . '/../app/settings.php';
 
 $app = new \Slim\App(array("settings" => $settings['settings']));
 
@@ -40,7 +39,5 @@ $app->post('/edit/{id}', 'App\Controller:editBook');
 $app->post('/', 'App\Controller:backToIndex');
 
 $container['db'] = $settings["db"];
-
-
 
 $app->run();
