@@ -1,0 +1,39 @@
+<div class="col-md-12">
+    <h2>Books Table</h2>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Author</th>
+                        <th>Genre</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                {% for book in books %}
+
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ book.name|e }}</td>
+                        <td>{{ book.author|e }}</td>
+                        <td>{{ book.genre|e }}</td>
+                        <td>{{ book.year|e }}</td>
+                        <td>
+                            <a href="/view/{{ book.id }}" alt="view" class="btn btn-info">View</a>
+                            <a href="/edit/{{ book.id }}" alt="edit" class="btn btn-warning">Edit</a>
+                            <a href="/delete/{{ book.id }}" alt="delete" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+            </table>
+            <a href="/add" class="btn btn-primary btn-lg btn-block new-book">New book</a>
+        </div>
+    </div>
+</div>
