@@ -1,18 +1,15 @@
 <?php
 return array(
     'settings' => array(
-        'displayErrorDetails' => true,
+        'displayErrorDetails' => true
     ),
-    // Database
     'db' => array(
         'driver'    => 'mysql',
         'host'      => 'localhost',
-        'database'  => 'bookshelf',
-        'username'  => 'admin',
-        'password'  => 'admin',
+        'dbname'    => 'id7613380_bookshelf',
+        'user'      => 'id7613380_admin',
+        'pass'      => 'admin',
         'charset'   => 'utf8',
         'collation' => 'utf8_unicode_ci',
-        'prefix'    => '',
     )
-
 );
