@@ -5,8 +5,6 @@ namespace App;
 use Slim\Views\Twig;
 use Slim\Container;
 use PDO;
-//use Slim\Http\Request;
-//use Slim\Http\Response as Response;
 
 use App\Model;
 
@@ -57,7 +55,12 @@ class Controller
         $id = (int) $args['id'];
         $model = new Model($this->container);
         $model->removeBook($id);
-        return $response->withRedirect('/');
+
+        $listBooks = $model->getListBooks();
+        $data = array('books' => $listBooks);
+        $response = $this->view->render($response, 'index-table.html.twig',$data);
+        return $response;
+        //return $response->withRedirect('/');
     }
 
     public function viewBook($request, $response, $args)
@@ -80,8 +83,20 @@ class Controller
             $formData = $request->getParsedBody();
             $formData['id'] = $id;
             $model->updateOneBook($formData);
-            $response = $response->withRedirect('/');
+
+            $listBooks = $model->getListBooks();
+            $data = array('books' => $listBooks);
+            $response = $this->view->render($response, 'index-table.html.twig',$data);
+            //$response = $response->withRedirect('/');
         }
+        return $response;
+    }
+
+    public function backToIndex($request, $response) {
+        $model = new Model($this->container);
+        $listBooks = $model->getListBooks();
+        $data = array('books' => $listBooks);
+        $response = $this->view->render($response, 'index-table.html.twig',$data);
         return $response;
     }
 

@@ -1,5 +1,4 @@
-<div class="col-md-12">
-    <h2>Books Table</h2>
+<div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
         <div class="panel-body">
             <table class="table">
@@ -13,9 +12,7 @@
                     </tr>
                 </thead>
                 <tbody>
-
                 {% for book in books %}
-
                     <tr>
                         <td>{{ loop.index }}</td>
                         <td>{{ book.name|e }}</td>
@@ -23,17 +20,15 @@
                         <td>{{ book.genre|e }}</td>
                         <td>{{ book.year|e }}</td>
                         <td>
-                            <a href="/view/{{ book.id }}" alt="view" class="btn btn-info">View</a>
-                            <a href="/edit/{{ book.id }}" alt="edit" class="btn btn-warning">Edit</a>
-                            <a href="/delete/{{ book.id }}" alt="delete" class="btn btn-danger">Delete</a>
+                            <a data-link-atr="/view/{{book.id}}" alt="view" class="btn btn-info btn-view_book">View</a>
+                            <a data-link-atr="/edit/{{book.id}}" alt="edit" class="btn btn-warning btn-edit_book">Edit</a>
+                            <a data-link-atr="/delete/{{book.id}}" alt="delete" class="btn btn-danger btn-delete_book">Delete</a>
                         </td>
                     </tr>
-
                 {% endfor %}
-
                 </tbody>
             </table>
-            <a href="/add" class="btn btn-primary btn-lg btn-block new-book">New book</a>
+            <a href="/add" class="btn btn-primary btn-lg btn-block new-book">New BOOK</a>
         </div>
     </div>
 </div>

@@ -1,41 +1,27 @@
-{% extends "base.html.twig" %}
-{% block title %}Edit Book{% endblock %}
-{% block container %}
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Edit Book
-                        </div>
-                        {{ test }}
-                        <div class="panel-body">
-                            <form action="/edit/{{book.id}}" method="post" >
-                                <div class="form-group">
-                                    <label for="name" >Name</label>
-                                    <input type="text" class="form-control" name="name" value="{{ book.name }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="author">Author</label>
-                                    <input type="text" class="form-control" name="author" value="{{ book.author }}" >
-                                </div>
-                                <div class="form-group">
-                                    <label for="genre">Genre</label>
-                                    <input type="text" class="form-control" name="genre" value="{{ book.genre }}" >
-                                </div>
-                                <div class="form-group">
-                                    <label for="year">Year</label>
-                                    <input type="text" class="form-control" name="year" value="{{ book.year }}" >
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Edit Book</button>
-                            </form>
-                        </div>
-                    </div>
-                 </div>
-            </div>
+<div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form action="/edit/{{book.id}}" method="post" class="form-edit_book">
+                <div class="form-group">
+                    <label for="name" >Name</label>
+                    <input type="text" class="form-control" name="name" value="{{book.name}}">
+                </div>
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" class="form-control" name="author" value="{{book.author}}" >
+                </div>
+                <div class="form-group">
+                    <label for="genre">Genre</label>
+                    <input type="text" class="form-control" name="genre" value="{{book.genre}}" >
+                </div>
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <input type="text" class="form-control" name="year" value="{{book.year}}" >
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Edit BOOK</button>
+            </form>
         </div>
-    </section>
+    </div>
+ </div>
 
-{% endblock %}
 

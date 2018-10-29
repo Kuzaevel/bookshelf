@@ -37,6 +37,8 @@ $app->get('/view/{id}', 'App\Controller:viewBook');
 $app->get('/edit/{id}', 'App\Controller:editBook');
 $app->post('/edit/{id}', 'App\Controller:editBook');
 
+$app->post('/', 'App\Controller:backToIndex');
+
 $container['db'] = $settings["db"];
 
 
