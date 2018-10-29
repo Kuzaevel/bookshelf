@@ -6,6 +6,7 @@ composer.lock
 /public_html/css/
 /public_html/fonts/
 /public_html/js/vendor
+/public_html/js/app.js
 /logs/
 /templates/cache/*
 /templates/_cache/
