@@ -1,0 +1,46 @@
+<div class="content-header">
+    <h1 class="h1--content">{{count}}</h1>
+    <span class="sort_button sort_button-base" data-sort="date">По дате</span> <span> &nbsp/&nbsp </span> <span class="sort_button sort_button-base" data-sort="popular">По популярности</span>
+</div>
+
+<div class="question-list">
+
+    {{#questions}}
+        <div class="question-item" data-id="{{id}}">
+            <div>
+                <div class="question-item__header mb1">
+                    <div class="question-item__header-center">
+                        <div class="question-item__author truncate">
+                            <span class="author__name">{{author}}</span>
+                        </div>
+
+                        <div class="question-item__likes">
+                            <div class="question-item__main">
+                                <span id="l-count-{{id}}">{{countLikes}}</span><i class="glyphicon glyphicon-thumbs-up thumb-up__sp"></i>
+                                &nbsp;
+                                <div class="question-item__date" title="{{date}}">{{date}}</div>
+                            </div>
+                            <div class="question-item__eye" data-show="{{isHidden}}}" data-id="{{id}}">
+                                {{#isHidden}}
+                                    <i class="glyphicon glyphicon-eye-close"></i>
+                                {{/isHidden}}
+                                {{^isHidden}}
+                                    <i class="glyphicon glyphicon-eye-open"></i>
+                                {{/isHidden}}
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="question-item__action-zone">
+                        <div class="score score--card">
+                        </div>
+                    </div>
+                </div>
+                <div class="question-item__body">
+                    {{description}}
+                </div>
+            </div>
+        </div>
+    {{/questions}}
+
+</div>

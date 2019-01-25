@@ -1,0 +1,24 @@
+<div class='login_meeting col-lg-8 col-md-8 col-sm-12 col-xs-12 col-lg-offset-2 col-md-offset-2'>
+
+    {{#meeting}}
+    <div class='col-lg-8 col-md-8 col-sm-12 col-xs-12 '>
+        <label class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>{{name}}</label>
+        <label class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>{{description}}</label>
+    </div>
+    <div class='col-lg-4 col-md-4 col-sm-12 col-xs-12'>
+        <label class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>{{start_date}}<br />{{end_date}}</label>
+    </div>
+    {{/meeting}}
+
+    <div class="meeting_block meeting_manager col-lg-12 col-md-12 col-sm-12 col-xs-12" style="">
+        <form id="addQuestion">
+            <input type="text" name="userName" class="form-control col-lg-12 col-md-12 col-sm-12 col-xs-12" placeholder="Введите Ваше имя (по желанию)" autocomplete="off">
+            <textarea type="text" name="description" class="form-control col-lg-12 col-md-12 col-sm-12 col-xs-12" rows="2" placeholder="Введите текст вопроса" required></textarea>
+            <button id="sendQuestion" class="form-control btn-primary">Отправить</button>
+        </form>
+    </div>
+    <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center'><a href='#' class='leave_event'>Переключиться на другое мероприятие</a> {{doubleLeaveBlock}}</div>
+    <div id='meeting_questions' class='col-lg-12 col-md-12 col-sm-12 col-xs-12 meeting_block'> </div>
+    <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center'><a href='#' class='leave_event'>Переключиться на другое мероприятие</a></div>
+
+</div>

@@ -1,0 +1,78 @@
+<div class="login_meeting col-lg-8 col-md-8 col-sm-12 col-xs-12 col-lg-offset-2 col-md-offset-2">
+    {{#active}}
+    <div class="meeting_block">
+        <div class="row admin_menu">
+            <a href="#" class="admin_pages sort_active" data-page="active">Активные</a>
+            <a href="#" class="admin_pages" data-page="archive">Архив</a>
+            <a href="#" class="admin_pages" data-page="manager">Организаторы</a>
+        </div>
+        <div class="event_list col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            {{#events}}
+            <div class="event_item col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="event_item_data col-lg-11 col-md-11 col-sm-11 col-xs-10">
+                    <div class="event_title">{{name}}</div>
+                    <div class="questions_count">{{quest_cnt}}</div>
+                    <div class="event_time">{{start_date}} - {{end_date}}</div>
+                </div>
+                <div class="event_item_del col-lg-1 col-md-1 col-sm-1 col-xs-2 no-padding">
+                    <i class="delete_event glyphicon glyphicon-remove-circle" data-event="{{event_id}}" data-page="{{page}}"></i>
+                </div>
+            </div>
+            {{/events}}
+        </div>
+        <input type="button" class="add_event form_control btn-primary col-lg-3" value="Добавить мероприятие">
+    </div>
+    {{/active}}
+
+    {{#archive}}
+    <div class="meeting_block">
+        <div class="row admin_menu">
+            <a href="#" class="admin_pages" data-page="active">Активные</a>
+            <a href="#" class="admin_pages sort_active" data-page="archive">Архив</a>
+            <a href="#" class="admin_pages" data-page="manager">Организаторы</a>
+        </div>
+        <div class="event_list col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            {{#events}}
+            <div class="event_item col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="event_item_data col-lg-11 col-md-11 col-sm-11 col-xs-10">
+                    <div class="event_title">{{name}}</div>
+                    <div class="questions_count">{{quest_cnt}}</div>
+                    <div class="event_time">{{start_date}} - {{end_date}}</div>
+                </div>
+                <div class="event_item_del col-lg-1 col-md-1 col-sm-1 col-xs-2 no-padding">
+                    <i class="delete_event glyphicon glyphicon-remove-circle" data-event="{{event_id}}" data-page="{{page}}"></i>
+                </div>
+            </div>
+            {{/events}}
+        </div>
+    </div>
+    {{/archive}}
+
+    {{#manager}}
+    <div class="meeting_block">
+        <div class="row admin_menu">
+            <a href="#" class="admin_pages" data-page="active">Активные</a>
+            <a href="#" class="admin_pages" data-page="archive">Архив</a>
+            <a href="#" class="admin_pages sort_active" data-page="manager">Организаторы</a>
+        </div>
+        <div class="user_list col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            {{#users}}
+            <div class="user_item col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="user_item_data col-lg-10 col-md-10 col-sm-10 col-xs-8">
+                    <div class="user_title">{{name}}</div>
+                    <div class="user_role">{{user_role}}</div>
+                </div>
+                <div class="user_item_edit col-lg-1 col-md-1 col-sm-1 col-xs-2 no-padding">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </div>
+                <div class="user_item_del col-lg-1 col-md-1 col-sm-1 col-xs-2 no-padding">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </div>
+            </div>
+            {{/users}}
+        </div>
+        <input type="button" class="add_user form_control btn-primary col-lg-3" value="Добавить организатора">
+    </div>
+    {{/manager}}
+    <input type="button" class="logout form_control btn-primary col-lg-offset-10 col-lg-2" value="Выход">
+</div>

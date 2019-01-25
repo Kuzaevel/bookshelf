@@ -1,0 +1,40 @@
+
+        <div class="content-header">
+            <h1 class="h1--content">{{count}}</h1>
+            <span class="sort_button {{#isMonitor}}sort_button-date{{/isMonitor}}{{^isMonitor}}sort_button-base{{/isMonitor}}" data-sort="date">
+                По дате
+            </span>|
+            <span class="sort_button {{#isMonitor}}sort_button-likes{{/isMonitor}}{{^isMonitor}}sort_button-base{{/isMonitor}}" data-sort="popular">
+                По популярности
+            </span>
+        </div>
+
+        <div class="question-list">
+
+            {{#questions}}
+                <div class="question-item" data-id="{{id}}" data-likes="{{countLikes}}" data-date="{{dateSort}}">
+                    <div>
+                        <div class="question-item__header mb1">
+                            <div class="question-item__header-center">
+                                <div class="question-item__author truncate">
+                                    <span class="author__name">{{author}}</span>
+                                </div>
+                                <div class="question-item__date" title="{{date}}">{{date}}</div>
+                            </div>
+                            <div class="question-item__action-zone">
+                                <div class="score score--card">
+                                    <div class="score__btn {{^isMonitor}}score__btn--plus{{/isMonitor}} btn-plain {{#userLikes}}score__btn-active{{/userLikes}}" data-id="{{id}}">
+                                        <span id="l-count-{{id}}">{{countLikes}}</span>
+                                        <i class="glyphicon glyphicon-thumbs-up thumb-up"></i>
+                                        <!--<i class="fa fa-thumbs-o-up fa-fw thumb-up"></i>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="question-item__body">
+                            {{description}}
+                        </div>
+                    </div>
+                </div>
+            {{/questions}}
+        </div>
